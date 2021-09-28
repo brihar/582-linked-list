@@ -33,9 +33,8 @@ def next_block(last_block):
     
 # append 5 blocks to the blockchain
 def app_five(block_list):
-    original_len = len(block_list)
     for i in range(4):
-      last_block = block_list[original_len + i]
-      new_idx = original_len + i + 1
+      last_block = block_list[len(block_list) - 1]
+      new_idx = len(block_list)
       new_block = Block(new_idx, datetime.now(), "this is block %d" %(new_idx), last_block.hash)
       block_list.append(new_block)
